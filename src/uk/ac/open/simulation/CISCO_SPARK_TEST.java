@@ -35,6 +35,7 @@ public class CISCO_SPARK_TEST {
 		
 		
 		
+		
 		SparkConnector sc = new SparkConnector(ACCESS_TOKEN);
 		String lastMessage = sc.getLastMessage(ROOM_ID);
 		
