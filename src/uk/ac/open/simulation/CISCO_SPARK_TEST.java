@@ -32,15 +32,26 @@ public class CISCO_SPARK_TEST {
 		String ROOM_RES = "Y2lzY29zcGFyazovL3VzL1JPT00vOWYxMGMyNTAtZTE2ZC0xMWU3LTliZTktYWZhNzg4ZDZiN2Nk";
 		String ACCESS_TOKEN = "NzU0MTIyMWEtZjRjNS00YTkxLWE4NzgtYTg1YjQ5ZjE0NTZiOGZhM2Y3ODMtZTk5";
 		String msg= "Stop coffee";
-		
-		
-		
+		String msg2= "WM OFF";
+		String msg3= "Make coffee";
 		
 		SparkConnector sc = new SparkConnector(ACCESS_TOKEN);
 		String lastMessage = sc.getLastMessage(ROOM_ID);
 		
 		if(lastMessage.equals("Door Open")){
+			//stop coffee
 			sc.send(msg, ROOM_RES);
 		}
+		
+		if(lastMessage.equals("-Coffee ON")){
+			//stop WM
+			sc.send(msg2, ROOM_RES);
+		}
+		
+		if(lastMessage.equals("-WM OFF")){
+			//turn on coffee
+			sc.send(msg3, ROOM_RES);
+		}
+		
 	}
 }
